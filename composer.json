@@ -1,0 +1,9 @@
+{
+  "name": "unio/24pay",
+  "description": "Implementace platební brány 24pay.sk ",
+  "autoload": {
+    "psr-4": {
+      "TwentyFourPay\\": "src/"
+    }
+  }
+}
