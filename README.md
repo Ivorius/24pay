@@ -35,3 +35,26 @@ try {
     echo $e->getMessage();
 }
 ```
+
+## Přijetí odpovědi z brány
+```php
+$data = $_POST["params"];
+try {
+	$settings24 = new TwentyFourPay\ShopSettings(MID, ESHOPID, PASS);
+
+	$xml = simplexml_load_string($data);
+	$transaction = new TwentyFourPay\Transaction\SimpleXmlProcess($xml);
+
+	$response = new TwentyFourPay\Response($settings24, $transaction);
+	if ($response->isValid()) {
+		//odpoved je validni (spravne podepsana), zjisti vysledek zpracovani
+		 $result = $transaction->getResult();
+	} else {
+		//zaloguj chybu
+	}
+
+} catch (\Exception $e) {
+	
+}
+
+```

@@ -6,8 +6,6 @@
 namespace TwentyFourPay;
 
 
-use GuzzleHttp\TransferStats;
-
 class Request
 {
 	const GATE = "https://admin.24-pay.eu/pay_gate/paygt";
